@@ -5,7 +5,7 @@ const botToken = 'BOT TOKEN';
 
 const client = new WebClient(botToken, {
     logLevel: LogLevel.DEBUG
-});
+}); 
 async function publishMessage(id, text) {
     try {
         const result = await client.chat.postMessage({
