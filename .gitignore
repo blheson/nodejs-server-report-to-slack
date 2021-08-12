@@ -1,0 +1,6 @@
+node_modules
+controller/user
+api
+server
+routes
+*.deact
