@@ -3,11 +3,13 @@ const { WebClient, LogLevel } = require("@slack/web-api");
 const channelId = 'CHANNEL ID';
 const botToken = 'BOT TOKEN';
 
+//initialize slack webclient
 const client = new WebClient(botToken, {
     logLevel: LogLevel.DEBUG
 }); 
 async function publishMessage(id, text) {
     try {
+        //post request to send message 
         const result = await client.chat.postMessage({
             // token: botToken,
             channel: id,
