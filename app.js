@@ -1,8 +1,9 @@
-const express = require('express')
+const express = require('express');
+const path = require('path');
 const fetch = require('node-fetch');
-// const { initMessage } = require("./controller/slack/sendMessage.js");
-const config = require('./config');
-
+const { initMessage } = require( path.join(__dirname, 'controller/slack/sendMessage.js'));
+const config = require( path.join(__dirname, 'config'));
+console.log(path.join(__dirname, 'config'));
 const app = express();
 const port = process.env.PORT || 5000;
 const endpoint = config.endpoint;
