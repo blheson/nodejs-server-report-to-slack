@@ -1,5 +1,6 @@
 const { WebClient, LogLevel } = require("@slack/web-api");
-const config = require( path.join(__dirname, 'config'));
+const path = require('path');
+const config = require( '../../config');
 const channelId = config.CHANNEL_ID;
 const botToken = config.BOT_TOKEN;
 
