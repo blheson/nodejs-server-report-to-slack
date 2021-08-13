@@ -1,7 +1,27 @@
 const { sendMessage } = require('./send_message');
-module.exports = status = (req, res, next) => {
-    // console.log(req.params.status);
-    res.send(req.body.challenge);
+const endpoint = process.env.endpoint || 'https://immense-journey-49318.herokuapp.com/api/v1/health'
+const hourTimer = 60000 //per hour;
+module.exports = status = async (req, res, next) => {
+
+
+    let payload = req.body;
+    res.sendStatus(200);
+
+    if (payload.event.type === "app_mention") {
+        if (payload.event.text.includes("start server check")) {
+            // Make call to chat.postMessage using bot's token
+            botIntervalTimer = setInterval(async () => {
+                let response = await fetch(endpoint);
+                let result = await response.json();
+                let feedback = await sendMessage(result.message);
+                console.log(feedback, result.message);
+            }, hourTimer);
+        } else if (payload.event.text.includes("stop server check")) {
+            clearInterval(botIntervalTimer);
+            let feedback = await sendMessage("I have stopped checking the server's health");
+            console.log(feedback, result.message);
+        }
+    }
     // let botIntervalTimer;
     // const endPoint = process.env.endpoint;
     // switch (req.params.status) {

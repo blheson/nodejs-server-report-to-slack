@@ -1,6 +1,6 @@
 module.exports = noRoute = (req, res, next) => {
    
     if (!req.route)
-        res.send('No such route');
+        res.sendStatus(404)
     next();
 }
