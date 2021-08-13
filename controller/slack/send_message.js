@@ -1,8 +1,7 @@
 const { WebClient, LogLevel } = require("@slack/web-api");
 const path = require('path');
-const config = require( '../../config');
-const channelId = config.CHANNEL_ID;
-const botToken = config.BOT_TOKEN;
+const channelId = process.env.CHANNEL_ID;
+const botToken = process.env.BOT_TOKEN;
 
 //initialize slack webclient
 const client = new WebClient(botToken, {
@@ -23,7 +22,7 @@ async function publishMessage(id, text) {
     }
 }
 module.exports = {
-    initMessage: (message) => {
+    sendMessage: (message) => {
         return publishMessage(channelId, message);
     }
 }

@@ -2,6 +2,9 @@ node_modules
 controller/user
 api
 server
-routes
+
 *.deact
 config.js
+.env
+database.js
+model
