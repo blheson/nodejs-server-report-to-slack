@@ -20,6 +20,8 @@ module.exports = status = async (req, res, next) => {
             clearInterval(botIntervalTimer);
             let feedback = await sendMessage("I have stopped checking the server's health");
             console.log(feedback, result.message);
+        }else{
+            let feedback = await sendMessage("I do not recognise that command");
         }
     }
     // let botIntervalTimer;
