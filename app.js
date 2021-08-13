@@ -1,10 +1,10 @@
 const express = require('express')
 const fetch = require('node-fetch');
-const { initMessage } = require("./controller/slack/sendMessage.js");
+// const { initMessage } = require("./controller/slack/sendMessage.js");
 const config = require('./config');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 const endpoint = config.endpoint;
 const hourTimer = config.TIMER || 3600000 //per hour;
 app.use('/',(req,res,next)=>{
