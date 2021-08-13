@@ -4,7 +4,6 @@ api
 server
 
 *.deact
-config.js
 .env
 database.js
 model

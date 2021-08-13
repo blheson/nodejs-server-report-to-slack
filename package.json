@@ -1,5 +1,5 @@
 {
-  "name": "express-facebook-page-scheduler",
+  "name": "server-report-to-slack",
   "version": "1.0.0",
   "description": "This will help schedule your posts to your facebook page",
   "main": "app.js",
