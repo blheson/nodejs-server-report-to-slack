@@ -2,7 +2,6 @@ node_modules
 controller/user
 api
 server
-
 *.deact
 .env
 database.js

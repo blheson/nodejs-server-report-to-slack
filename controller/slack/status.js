@@ -1,3 +1,4 @@
+const { sendMessage } = require('./send_message');
 module.exports = status = (req, res, next) => {
     // console.log(req.params.status);
     let botIntervalTimer;
@@ -7,7 +8,7 @@ module.exports = status = (req, res, next) => {
             // botIntervalTimer = setInterval(async () => {
             //     let response = await fetch(endpoint);
             //     let result = await response.json();
-            //     let feedback = await initMessage(result.message);
+            //     let feedback = await sendMessage(result.message);
             //     console.log(feedback, result.message);
             // }, hourTimer);
             res.send('You have started the bot');
