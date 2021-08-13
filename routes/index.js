@@ -7,7 +7,7 @@ version1Router.get('/', (req, res, next) => {
     res.send({ status: 200, message: 'welcome' });
 })
 
-version1Router.get('/challenge', (req, res, next) => {
+version1Router.post('/challenge', (req, res, next) => {
     res.send(req.body.challenge);
 })
 
