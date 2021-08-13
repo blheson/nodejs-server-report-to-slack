@@ -5,4 +5,6 @@ slackRouter.get('/', (req, res, next) => {
 });
 // console.log(status);
 slackRouter.get('/status/:status', status);
+slackRouter.post('/status', status);
+
 module.exports = slackRouter;
